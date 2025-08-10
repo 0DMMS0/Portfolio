@@ -1,11 +1,13 @@
-const name = "Mauricio";
+import { Link } from 'react-router-dom';
 
 function Header() {
   return (
     <header>
-      <h2>Hola soy, {name}</h2>
+      <h2>Welcome to my Portfolio</h2>
       <nav>
-        <a href="<About />">About me</a> | <a href="#projects">Projects</a> | <a href="#contact">Contact</a>
+        <Link to="/">Home</Link> |{' '}
+        <Link to="/about">About me</Link> |{' '}
+        <Link to="/projects">Projects</Link>
       </nav>
     </header>
   );

@@ -1,9 +1,11 @@
+import MineGibli from '../assets/MineGibli.png';
+
 function About() {
     return (
         <section>
             <h1>About Me</h1>
             <img 
-                src="src/assets/MineGibli.png" 
+                src={MineGibli}
                 alt="Avatar de Mauricio Mora" 
                 width="200" 
                 height="200"
