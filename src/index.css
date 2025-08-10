@@ -1,0 +1,151 @@
+:root {
+  /* Colors */
+  --color-bg: #1c211e;
+  --color-header-bg: #1c211e;
+  --color-card-bg: #1c211e;
+  --color-text: #e3f7d3;
+  --color-link: #2c3e50;
+  
+
+  /* Types */
+  --font-family: Arial, sans-serif;
+  --spacing-s: 0.5rem;
+  --spacing-m: 1rem;
+  --spacing-l: 2rem;
+  --border-radius: 6px;
+
+   --carousel-radius: 344px;
+}
+
+/* Styles */
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* Container */
+.container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "header"
+    "main";
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  grid-area: header;
+  background-color: var(--color-header-bg);
+  padding: var(--spacing-m) var(--spacing-l);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-s);
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header nav {
+  display: flex;
+  gap: var(--spacing-m);
+  justify-content: center;
+}
+
+header nav a {
+  text-decoration: none;
+  color: var(--color-link);
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main / Home */
+main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  gap: var(--spacing-l);
+  padding: var(--spacing-l);
+  background-color: var(--color-bg);
+}
+
+
+/* Home */
+section {
+  background-color: var(--color-card-bg);
+  padding: var(--spacing-m);
+  border-radius: var(--border-radius);
+  text-align: center;
+}
+
+section h2 {
+  margin-top: 0;
+}
+
+.cameraScene{
+    border: solid aqua 2px;
+    width: 100vh;
+    height: 40vh;
+    position: relative;
+    perspective: 1000px;
+    margin: 0 auto;
+}
+
+.spin-wheel {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: spin 20s linear infinite;
+}
+
+.spin-wheel-item {
+  width: 300px;
+  height: 200px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  transform-origin: center;
+}
+
+/* Formula to calculate the translate pixels based on translateZ 360 / N = °*/
+
+.spin-wheel-item:nth-child(1) {
+  transform: translate(-50%, -50%) rotateY(0deg) translateZ(300px);
+}
+.spin-wheel-item:nth-child(2) {
+  transform: translate(-50%, -50%) rotateY(72deg) translateZ(300px);
+}
+.spin-wheel-item:nth-child(3) {
+  transform: translate(-50%, -50%) rotateY(144deg) translateZ(300px);
+}
+.spin-wheel-item:nth-child(4) {
+  transform: translate(-50%, -50%) rotateY(216deg) translateZ(300px);
+}
+.spin-wheel-item:nth-child(5) {
+  transform: translate(-50%, -50%) rotateY(288deg) translateZ(300px);
+}
+
+@keyframes spin {
+    from{
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
